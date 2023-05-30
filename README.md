@@ -173,7 +173,7 @@ volumes:
     sail-mysql:
         driver: local
 ```
-### Uruchomienie Laravela w środowiski Docker
+### Uruchomienie Laravela w środowisku Docker
 ```
 ./vendor/bin/sail up
 ```
