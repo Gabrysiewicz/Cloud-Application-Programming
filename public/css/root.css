@@ -1,0 +1,20 @@
+:root{
+    --background-color: #000000;
+    --text-color: #a5a5a5;
+    --link-color: ;
+    --font-size: 120%;
+    --font-family: "OCR A Std, monospace";
+    
+    --background-color-listing: aliceblue;
+    --text-color-listing: #181818;
+
+    --palette-a: #1A120B;
+    --palette-b: #3C2A21;
+    --palette-c: #D5CEA3;
+    --palette-d: #E5E5CB;
+
+    --palette-e: #290001;
+    --palette-f: #87431D;
+    --palette-g: #C87941;
+    --palette-h: #DBCBBD;
+}

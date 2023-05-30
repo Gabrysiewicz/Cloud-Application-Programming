@@ -1,0 +1,55 @@
+@import 'root.css';
+#section-manage-table{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-shadow: inset 0 0 5px red;
+    padding: 5% 0;
+    background-color: aliceblue;
+}
+#section-manage-table table{
+    flex-basis: 80%;
+    /* background-color:aliceblue; */
+    color: lightgray;
+}
+#section-manage-table thead tr{
+    background-color: black;
+}
+#section-manage-table tbody tr:nth-child(2n-1){
+    background-color:rgb(70, 70, 70);
+    color: rgb(200, 200, 200);
+}
+#section-manage-table tbody tr:nth-child(2n-2){
+    background-color:rgb(50, 50, 50);
+    color: rgb(200, 200, 200);
+}
+#section-manage-table table tbody tr:hover{
+    background-color:rgb(63, 31, 31);
+}
+#section-manage-table tbody{
+    text-align: center;
+}
+#section-manage-table th{
+    font-size: 130%;
+}
+td, th{
+    padding: 15px;
+}
+td{
+    font-size: 120%;
+}
+#section-manage-table button{
+    font-size: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    color:white;
+}
+#section-manage-table button:hover{
+    width: 100%;
+    cursor: pointer;
+    background-color: white;
+    color:black;
+}
+#section-manage-table tr td:last-child button:hover{
+    background-color: rgb(255, 0, 0);
+    color:white;
+}
