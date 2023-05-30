@@ -1,4 +1,11 @@
 <h1 align='center'> Projekt </h1>
+
+Repozytorium poświęcone pracy nad projektem zaliczeniowym z przedmiotu `Programowanie-aplikacji-w-chmurze-obliczeniowej` (semestr 6, Software Engineering).
+
+Projekt ma skupiać się na zastosowaniu środowiska Docker w aplikacjach chmurowych. 
+
+Technologia w której dana aplikacja ma zostać stworzona: dowolne
+
 <h2 align='center'>  Etap 1 - Przygotowanie środowiska </h2>
 
 ### Tworzymy bazową aplikację
