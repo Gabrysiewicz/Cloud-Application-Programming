@@ -97,4 +97,4 @@ cloud-app-app-1  |
 ```
 
 ### Aplikacja
-<img src="" >
+<img src="https://github.com/Gabrysiewicz/S6P_Programowanie-aplikacji-w-chmurze-obliczeniowej/blob/main/images/laravel_initial_site.jpg" >
