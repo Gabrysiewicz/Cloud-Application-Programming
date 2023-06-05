@@ -30,3 +30,16 @@ nav ul li{
 nav a, nav a:visited{
     color:white;
 }
+
+nav button{
+    border: none;
+    background: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    display: inline;
+
+}
+

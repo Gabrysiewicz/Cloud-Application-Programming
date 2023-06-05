@@ -30,11 +30,11 @@
                     <li>
                         <form method="POST" action='/logout'>
                         @csrf
-                        <button type='submit' >Sign out</button>
+                        <button type='submit' class='ffd'>Sign out</button>
                         </form>
                     </li>
                 @else
-                    <li><a href='/register'>Sign up</a></li>
+                    <li><a href='/register' class="">Sign up</a></li>
                     <li><a href='/login'>Sign in</a></li>
                 @endauth
                 

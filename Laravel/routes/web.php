@@ -37,6 +37,16 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
+// Route::get('/offert/{id}', function ($id) {
+//     $listing = Offert::find($id);
+//     if($listing){
+//         return view('offert', [
+//             'listing' => $listing
+//         ]);
+//     }else{
+//         abort('404');
+//     }
+// });
 
 // Route::get('/search', function (Request $request) {
 //     return "<p>{$request->name} {$request->surname}</p>";
