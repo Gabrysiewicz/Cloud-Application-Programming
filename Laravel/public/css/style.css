@@ -36,14 +36,14 @@ main h1{
     /* border-radius: 15px; */
 }
 .offert:hover{
-    box-shadow: 5px 5px 22px 12px rgb(121, 123, 255);
+    box-shadow: 5px 5px 22px 12px var(--hover-color);
 }
 nav a{
     transition: text-shadow 1s, color 1s;
 }
 nav a:hover{
-    text-shadow: 0px 0px 12px rgb(121, 123, 255);
-    color:rgb(121, 123, 255) !important;
+    text-shadow: 0px 0px 12px var(--hover-color);
+    color:var(--hover-color) !important;
 }
 .offert img{
     flex-basis: 25%;

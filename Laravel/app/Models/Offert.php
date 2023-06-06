@@ -16,13 +16,11 @@ class Offert extends Model
         // ddd($filters);
         if($filters['profession'] ?? false){ // not false
             $query->where('profession', 'like', '%'. request('profession') . '%');
-            // $query->where('profession', 'like', "{%request('profession')%}");
         }
 
         if($filters['search'] ?? false){ // not false
             $query->where('voivodeship', 'like', '%'. request('search') . '%')
                   ->orWhere('city', 'like', '%'. request('search') . '%');
-            // $query->where('profession', 'like', "{%request('profession')%}");
         }
     }
     public function user(){

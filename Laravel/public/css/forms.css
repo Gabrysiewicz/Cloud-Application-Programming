@@ -14,7 +14,7 @@
 #section-edit-form h1, 
 #section-register-form h1,
 #section-login-form h1{
-    box-shadow: inset 0 0 5px green;
+    /* box-shadow: inset 0 0 5px green; */
     padding: 7% 0;
     background-color: aliceblue;
     color:black;

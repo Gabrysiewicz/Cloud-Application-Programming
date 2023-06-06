@@ -9,13 +9,13 @@ body{
     align-items: center;
     justify-content: center;
     /* width: 100%; */
-    box-shadow: inset 0 0 5px red;
+    box-shadow: inset 0 0 5px var(--hover-color);
 }
 #profile-picture{
     position: absolute;
     top:310px;
 
-    box-shadow: 0 0 5px 5px rgb(60, 255, 0);
+    box-shadow: 0 0 5px 5px var(--hover-color);
 }
 #background-image{
     width:  100%; /*or 70%, or what you want*/
@@ -55,7 +55,7 @@ body{
     box-sizing: border-box;
     padding: 2%;
     background-color: rgb(231, 241, 250);
-    box-shadow: inset 0 0 15px yellow;
+    box-shadow: inset 0 0 15px var(--hover-color);
 }
 #description-text{
     padding: 5%;
