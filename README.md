@@ -247,3 +247,23 @@ TODO:
 - [ ] Szczegółowy opis docker-compose
 - [ ] Objaśnienie .env
 - [ ] Potencjalny Swarm
+
+
+Dokumentacja
+
+Opis
+Projekt ma na celu stworzenie aplikacji internetowej, która pozwoli użytkownikom reklamować swoje usługi fryzjerskie. Aplikacja zapewni fryzjerom platformę do tworzenia profili i promowania swoich firm wśród potencjalnych klientów. 
+
+Wymagania funkcjonalne
+- Rejestracja i logowanie użytkowników
+- Możliwość tworzenia usług fryzjerskich
+- Możliwość zarządzania swoimi usługami
+- Funkcja wyszukiwania umożliwiająca użytkownikom znalezienie fryzjerów na podstawie lokalizacji.
+
+Wymagania niefunkcjonalne
+- Aplikacja powinna być kompatybilna z różnymi przeglądarkami takimi jak Google Chrome, Firefox
+- Aplikacja powinna działać niezależnie od systemu operacyjnego
+- Dane użytkowników powinny być bezpiecznie przechowywane
+- System korzysta z bazy MySQL postawionej na Dockerze.
+- System jest wykonany w technologii Laravel
+
