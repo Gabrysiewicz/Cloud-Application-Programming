@@ -435,7 +435,7 @@ volumes:
 
 Jeżeli na tym etapie aplikacja działa poprawnie, możemy zaadaptować ją do swarm
 
-<img src="">
+<img src="https://github.com/Gabrysiewicz/S6P_Programowanie-aplikacji-w-chmurze-obliczeniowej/blob/main/images/swarm.jpg">
 
 ## docker-stack.yaml
 ```
