@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use auth;
 use App\Models\Offert;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class OffertController extends Controller
 {
@@ -46,6 +47,31 @@ class OffertController extends Controller
             'description' => 'string|nullable|max:512'
         ]);
 
+        // Check Youtube link
+        if (!empty($request->youtube) && !Str::startsWith($request->youtube, 'https://www.youtube.com/')) {
+            return redirect()->back()->withErrors(['youtube' => 'Invalid YouTube link.']);
+        }
+
+        // Check Facebook link
+        if (!empty($request->facebook) && !Str::startsWith($request->facebook, 'https://www.facebook.com/')) {
+            return redirect()->back()->withErrors(['facebook' => 'Invalid Facebook link.']);
+        }
+    
+        // Check Instagram link
+        if (!empty($request->instagram) && !Str::startsWith($request->instagram, 'https://www.instagram.com/')) {
+            return redirect()->back()->withErrors(['instagram' => 'Invalid Instagram link.']);
+        }
+    
+        // Check TikTok link
+        if (!empty($request->tiktok) && !Str::startsWith($request->tiktok, 'https://www.tiktok.com/')) {
+            return redirect()->back()->withErrors(['tiktok' => 'Invalid TikTok link.']);
+        }
+    
+        // Check Twitter link
+        if (!empty($request->twitter) && !Str::startsWith($request->twitter, 'https://twitter.com/')) {
+            return redirect()->back()->withErrors(['twitter' => 'Invalid Twitter link.']);
+        }
+
         if($request->hasFile('profile-picture')){
             $formFields['profile-picture'] = $request->file('profile-picture')->store('profile-pictures', 'public');
         }
@@ -82,6 +108,31 @@ class OffertController extends Controller
             'twitter' => 'url|nullable|max:128',
             'description' => 'string|nullable|max:512'
         ]);
+
+        // Check Youtube link
+        if (!empty($request->youtube) && !Str::startsWith($request->youtube, 'https://www.youtube.com/')) {
+            return redirect()->back()->withErrors(['youtube' => 'Invalid YouTube link.']);
+        }
+
+        // Check Facebook link
+        if (!empty($request->facebook) && !Str::startsWith($request->facebook, 'https://www.facebook.com/')) {
+            return redirect()->back()->withErrors(['facebook' => 'Invalid Facebook link.']);
+        }
+    
+        // Check Instagram link
+        if (!empty($request->instagram) && !Str::startsWith($request->instagram, 'https://www.instagram.com/')) {
+            return redirect()->back()->withErrors(['instagram' => 'Invalid Instagram link.']);
+        }
+    
+        // Check TikTok link
+        if (!empty($request->tiktok) && !Str::startsWith($request->tiktok, 'https://www.tiktok.com/')) {
+            return redirect()->back()->withErrors(['tiktok' => 'Invalid TikTok link.']);
+        }
+    
+        // Check Twitter link
+        if (!empty($request->twitter) && !Str::startsWith($request->twitter, 'https://twitter.com/')) {
+            return redirect()->back()->withErrors(['twitter' => 'Invalid Twitter link.']);
+        }
 
         if($request->hasFile('profile-picture')){
             $formFields['profile-picture'] = $request->file('profile-picture')->store('profile-pictures', 'public');
