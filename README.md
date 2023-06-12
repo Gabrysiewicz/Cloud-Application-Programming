@@ -180,6 +180,69 @@ volumes:
     sail-mysql:
         driver: local
 ```
+oraz automatyczna konfiguracja .env
+```
+APP_NAME=Laravel
+APP_ENV=local
+APP_KEY=base64:WMn3esYxnL16ja1TY4RH4irqRvGJysfZwcZLXf/p5Vs=
+APP_DEBUG=true
+APP_URL=http://localhost
+
+LOG_CHANNEL=stack
+LOG_DEPRECATIONS_CHANNEL=null
+LOG_LEVEL=debug
+
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=sail
+DB_PASSWORD=password
+
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+FILESYSTEM_DISK=local
+QUEUE_CONNECTION=sync
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
+
+MEMCACHED_HOST=127.0.0.1
+
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+MAIL_MAILER=smtp
+MAIL_HOST=mailpit
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS="hello@example.com"
+MAIL_FROM_NAME="${APP_NAME}"
+
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=
+AWS_USE_PATH_STYLE_ENDPOINT=false
+
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_HOST=
+PUSHER_PORT=443
+PUSHER_SCHEME=https
+PUSHER_APP_CLUSTER=mt1
+
+VITE_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+VITE_PUSHER_HOST="${PUSHER_HOST}"
+VITE_PUSHER_PORT="${PUSHER_PORT}"
+VITE_PUSHER_SCHEME="${PUSHER_SCHEME}"
+VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
+
+```
+
 ### Uruchomienie Laravela w środowisku Docker
 ```
 ./vendor/bin/sail up
@@ -196,7 +259,7 @@ project-laravel.test-1  |
 <h1 align='center'> Etap III - Praca z projektem </h1>
 
 # Sail
-### Aby krzystać z podstawowych poleceń php należy wykorzystywać program sail zainstalowany wewnątrz katalogu vendor
+### Aby krzystać z podstawowych poleceń php należy wykorzystywać program sail znajdujący się wewnątrz katalogu vendor
 ```
 ./vender/bin/sail php --version
 ```
@@ -230,28 +293,10 @@ root@46f759d3d748:/var/www/html# php artisan migrate
    INFO  Nothing to migrate.
 
 ```
+### Jeżeli chodzi o pliki oraz strukturę aplikacji, to są one współdzielone z kontenerem za pośrednictwem volumenow
 
-<h1 align='center'> Etap IV - Laravel </h1> 
+<h1 align='center'> Etap IV - Projekt </h1> 
 
-TODO:
-- [ ] Cel 
-- [ ] Zakres
-- [ ] Kontekst
-- [ ] Wymagania funkcjonalne
-- [ ] Wymagania niefunkcjonalne
-- [ ] etc
-
-<h1 align='center'> Etap V - Docker </h1> 
-
-TODO:
-- [ ] Szczegółowy opis docker-compose
-- [ ] Objaśnienie .env
-- [ ] Potencjalny Swarm
-
-
-Dokumentacja
-
-Opis
 Projekt ma na celu stworzenie aplikacji internetowej, która pozwoli użytkownikom reklamować swoje usługi fryzjerskie. Aplikacja zapewni fryzjerom platformę do tworzenia profili i promowania swoich firm wśród potencjalnych klientów. 
 
 Wymagania funkcjonalne
@@ -264,6 +309,11 @@ Wymagania niefunkcjonalne
 - Aplikacja powinna być kompatybilna z różnymi przeglądarkami takimi jak Google Chrome, Firefox
 - Aplikacja powinna działać niezależnie od systemu operacyjnego
 - Dane użytkowników powinny być bezpiecznie przechowywane
-- System korzysta z bazy MySQL postawionej na Dockerze.
+- System korzysta z bazy MySQL wewnątrz środowiska Docker.
 - System jest wykonany w technologii Laravel
+
+
+<h1 align='center'> Etap V - Docker </h1> 
+
+
 
