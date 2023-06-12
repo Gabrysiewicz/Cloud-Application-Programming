@@ -315,7 +315,7 @@ Wymagania niefunkcjonalne
 
 <h1 align='center'> Etap V - Docker </h1> 
 
-Jeżeli chodzi o Dockera w Laravelu to jest on niezwykle prosty dla developera. Wszystko spraszcza się do instalacji sail.
+Jeżeli chodzi o Dockera w Laravelu to jest on niezwykle prosty dla developera. Wszystko upraszcza się do instalacji sail.
 Natomiast już z persektywy dev-opsa sytuacja nie jest tak prosta, ponieważ sail niewystarczy do zarządzania projektem na produkcji.
 Dlatego najlepszą opcją jest przygotowanie własnego środowiska.
 
@@ -501,6 +501,8 @@ volumes:
 ```
 
 ## Swarm
+
+### Inicjalizacja swarm'a
 ```
 ➜  Laravel git:(main) ✗ docker swarm init
 ```
@@ -514,6 +516,8 @@ To add a worker to this swarm, run the following command:
 To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
 ```
 
+### Zbudowanie swarm o nazwie `laravel` na bazie `docker-stack.yaml`
+
 ```
 ➜  Laravel git:(main) ✗ docker stack deploy -c docker-stack.yaml laravel
 ```
@@ -525,6 +529,8 @@ Creating service laravel_mysql
 Creating service laravel_app
 ```
 
+### Listing powstałego swarm
+
 ```
 ➜  Laravel git:(main) ✗ docker stack ls
 ```
@@ -532,6 +538,8 @@ Creating service laravel_app
 NAME      SERVICES   ORCHESTRATOR
 laravel   2          Swarm
 ```
+
+### Wyświetlenie kontenerów wewnątrz swarm
 
 ```
 ➜  Laravel git:(main) ✗ docker stack ps laravel
@@ -545,3 +553,46 @@ tl7dqna1vcmj   laravel_mysql.1   mysql/mysql-server:8.0   docker-desktop   Runni
 sizjegy0b3x6   laravel_mysql.2   mysql/mysql-server:8.0   docker-desktop   Running         Running 31 seconds ago
 nxtibw63kgvn   laravel_mysql.3   mysql/mysql-server:8.0   docker-desktop   Running         Running 31 seconds ago
 ```
+
+## Export
+Do export możemy posłużyć się między innymi githubem. W .gitignore z góry będą znajowały się .env i vendor.
+
+```
+➜ git init
+```
+```
+➜ git add .
+```
+```
+➜ git commit -m"All done, Ready to export"
+```
+```
+➜ git push origin main
+```
+
+Export bazy danych jeżeli jej zawartość jest nam potrzeba, w tym celu możemy skorzystać z `mysqldump`
+```
+mysqldump -u your_database_user -p your_database_name > exported_database.sql
+```
+
+Exportujemy pliki konfiguracyjne:
+ - .env
+ - ./config
+ - ./database
+
+## Import
+Po pobraniu projektu możemy na nowo skonfigurować zienne środowiskowe jeżeli występuje taka potrzeba
+
+Z wykorzystaniem polecenia `composer install` doinstalowywujemy niezbędne pakiety w oparciu o plik `composer.json`
+
+Importujemy bazę danych
+
+Czyścimy cache:
+```
+php artisan cache:clear
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
+```
+
+Ewentualnie jeżeli okaże się to potrzebne należy nadać odpowiednie uprawnienia plikom i katalogom.
