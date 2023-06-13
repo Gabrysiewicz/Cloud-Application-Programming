@@ -603,3 +603,11 @@ php artisan view:clear
 ```
 
 Ewentualnie jeżeli okaże się to potrzebne należy nadać odpowiednie uprawnienia plikom i katalogom.
+
+# Wnioski
+
+W ramach projektu, został stworzony kompleksowy system umożliwiający fryzjerom tworzenie i zarządzanie swoim profilem, w którym mogą zaprezentować swoje umiejętności, doświadczenie, a także udostępniać informacje o dostępności oraz oferowanych usługach. Dzięki zastosowaniu Laravel, możliwe było łatwe zarządzanie bazą danych, co umożliwiło przechowywanie informacji o fryzjerach oraz ich usługach w sposób niezawodny.
+
+Laravel Sail zapewnił nie tylko niezawodność aplikacji, ale także jej przenośność. Dzięki zastosowaniu kontenerów Docker, aplikacja była w pełni izolowana od systemu operacyjnego oraz innych zasobów, co minimalizowało ryzyko awarii i zapewniało stabilne środowisko pracy. Ponadto, konteneryzację umożliwiającą uruchomienie aplikacji na różnych platformach, co pozwalało na przenoszenie aplikacji na inne środowiska bez konieczności dużej ilości dostosowań i konfiguracji.
+
+Aplikacja została zaprojektowana w sposób intuicyjny i przystępny dla użytkowników. Dzięki temu, fryzjerzy mogli łatwo tworzyć i aktualizować swoje profile oraz dodawać informacje o usługach, co pozwalało na skuteczne promowanie swojej działalności.
