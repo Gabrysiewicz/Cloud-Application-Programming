@@ -604,7 +604,7 @@ php artisan view:clear
 
 Ewentualnie jeżeli okaże się to potrzebne należy nadać odpowiednie uprawnienia plikom i katalogom.
 
-# Wnioski
+<h2 align='center'> Etap VI - Wnioski </h2>
 
 W ramach projektu, został stworzony kompleksowy system umożliwiający fryzjerom tworzenie i zarządzanie swoim profilem, w którym mogą zaprezentować swoje umiejętności, doświadczenie, a także udostępniać informacje o dostępności oraz oferowanych usługach. Dzięki zastosowaniu Laravel, możliwe było łatwe zarządzanie bazą danych, co umożliwiło przechowywanie informacji o fryzjerach oraz ich usługach w sposób niezawodny.
 
