@@ -3,7 +3,7 @@
   <tr> <td colspan="3" align='center'> <img src='https://github.com/Gabrysiewicz/Programowanie-aplikacji-w-chmurze-obliczeniowe/blob/main/logo_politechniki_lubelskiej.jpg' width="400px" height="400px"></td> </tr>
   <tr> <td> Kamil Gabrysiewicz </td> <td> Index: 95400 </td> <td> Grupa: 6.3 </td> </tr>  
   <tr> <td> Jakub Furtak </td> <td> Index: 95393 </td> <td> Grupa: 6.3 </td> </tr>  
-  <tr> <td> Semestr 6 </td> <td colspan='2'> Programowanie aplikacji w chmurze obliczeniowej </td> </tr>  
+  <tr> <td> Semestr 6 </td> <td colspan='2' align='center'> Programowanie aplikacji w chmurze obliczeniowej </td> </tr>  
 </table>
 
 <h1 align='center'> Projekt </h1>
