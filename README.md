@@ -390,7 +390,7 @@ COPY . .
 # Install composer dependencies
 RUN composer install --optimize-autoloader --no-dev
 
-# Set the container to listen on port 8000
+# Set the container to listen on port 80
 EXPOSE 80
 
 # Start the PHP development server
