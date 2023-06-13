@@ -313,12 +313,12 @@ Wymagania niefunkcjonalne
 - System jest wykonany w technologii Laravel
 
 ## Technologie
-<img src="" >
+<img src="https://github.com/Gabrysiewicz/S6P_Programowanie-aplikacji-w-chmurze-obliczeniowej/blob/main/images/laravel.png" >
 
 Laravel to popularny framework programistyczny, który jest wykorzystywany do budowy nowoczesnych aplikacji internetowych. Wykorzystuje język PHP i zapewnia wiele narzędzi i funkcji, które ułatwiają proces tworzenia oprogramowania.
 Jedną z największych zalet Laravela jest jego rozbudowany system ORM o nazwie Eloquent. Umożliwia on łatwą pracę z bazą danych, eliminując potrzebę pisania złożonych zapytań SQL. 
 
-<img src="">
+<img src="https://github.com/Gabrysiewicz/S6P_Programowanie-aplikacji-w-chmurze-obliczeniowej/blob/main/images/sail.jpg">
 Sail to oficjalne narzędzie dostarczane przez Laravel. Ułatwia wdrażanie i uruchamianie aplikacji Laravel poprzez konteneryzację za pomocą Docker. Kontenery te zawierają wszystkie niezbędne zależności potrzebne do bezbłędnej pracy aplikacji Laravel.
 <h1 align='center'> Etap V - Docker </h1> 
 
