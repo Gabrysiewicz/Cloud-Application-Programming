@@ -1,32 +1,33 @@
 <table align='center'>
   <tr> <td colspan='3'> <img width="884px" > </td> </tr>
-  <tr> <td colspan="3" align='center'> <img src='https://github.com/Gabrysiewicz/Programowanie-aplikacji-w-chmurze-obliczeniowe/blob/main/logo_politechniki_lubelskiej.jpg' width="400px" height="400px"></td> </tr>
+  <tr> <td colspan="3" align='center'> <img src='https://github.com/Gabrysiewicz/Cloud-Application-Programming/blob/main/logo_politechniki_lubelskiej.jpg' width="400px" height="400px"></td> </tr>
   <tr> <td> Kamil Gabrysiewicz </td> <td> Index: 95400 </td> <td> Grupa: 6.3 </td> </tr>  
   <tr> <td> Jakub Furtak </td> <td> Index: 95393 </td> <td> Grupa: 6.3 </td> </tr>  
-  <tr> <td> Semestr 6 </td> <td colspan='2' align='center'> Programowanie aplikacji w chmurze obliczeniowej </td> </tr>  
+  <tr> <td> Session 6 </td> <td colspan='2' align='center'> Cloud Application Programming </td> </tr>  
 </table>
 
-<h1 align='center'> Projekt </h1>
+<h1 align='center'>Project</h1>
 
-Repozytorium poświęcone pracy nad projektem zaliczeniowym z przedmiotu `Programowanie-aplikacji-w-chmurze-obliczeniowej` (semestr 6, Software Engineering).
+This repository is dedicated to the coursework project for the subject `Cloud Application Programming` (Semester 6, Software Engineering).
 
-Projekt ma skupiać się na zastosowaniu środowiska Docker w aplikacjach chmurowych. 
+The project focuses on using **Docker** in cloud applications.  
 
-Technologia w której dana aplikacja ma zostać stworzona: dowolne
+The technology for creating the application: any of your choice.
 
-<h2 align='center'>  Etap 1 - Przygotowanie środowiska </h2>
+<h2 align='center'>Stage 1 – Setting Up the Environment</h2>
 
-### Tworzymy bazową aplikację
+### Creating the base application
 ```
 composer create-project --prefer-dist laravel/laravel your-project-name
 ```
 
-### Przechodzimy do aplikacji
+### Moving into the application directory
 ```
 cd your-project-name
 ```
 
-### Struktura nowego projektu
+### Structure of the new project
+
 ```
 .
 ├── README.md
@@ -50,7 +51,7 @@ cd your-project-name
 
 <!--
 
-### Tworzymy Dockerfile
+### Dockerfile Creation
 ```
 # Use the official PHP image as the base image
 FROM php:8.2-fpm
@@ -88,7 +89,7 @@ EXPOSE 8000
 CMD php artisan serve --host=0.0.0.0 --port=8000
 ```
 
-### Tworzymy docker-compose
+### docker-compose create
 ```
 version: '3'
 
@@ -101,7 +102,7 @@ services:
       - 8000:8000
 ```
 
-### Uruchamiamy bazowy projekt
+### Run base project
 ```
 docker-compose up 
 ```
@@ -113,23 +114,24 @@ cloud-app-app-1  |   Press Ctrl+C to stop the server
 cloud-app-app-1  |
 ```
 
-### Aplikacja
+### App
 <img src="https://github.com/Gabrysiewicz/S6P_Programowanie-aplikacji-w-chmurze-obliczeniowej/blob/main/images/laravel_initial_site.jpg" >
 
 -->
 
-<h2 align='center'> Etap II - Instalacja Docker </h2>
+<h2 align='center'>Stage II – Installing Docker</h2>
 
-### Instalacja saila za pośrednictwem composer
+### Installing Sail via Composer
 ```
 composer require laravel/sail --dev
 ```
 
-### Utworzenie podstawowej konfiguracji docker-compose dla larvel
+### Creating a basic Docker Compose configuration for Laravel
+
 ```
 php artisan sail:install
 ```
-Efektem polecenia jest plik docker-compose.yml
+The command produces a `docker-compose.yml` file
 ```
 version: '3'
 services:
@@ -188,7 +190,7 @@ volumes:
     sail-mysql:
         driver: local
 ```
-oraz automatyczna konfiguracja .env
+as well as automatic `.env` configuration
 ```
 APP_NAME=Laravel
 APP_ENV=local
@@ -251,7 +253,8 @@ VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 ```
 
-### Uruchomienie Laravela w środowisku Docker
+### Running Laravel in the Docker environment
+
 ```
 ./vendor/bin/sail up
 ```
@@ -262,22 +265,23 @@ project-laravel.test-1  |
 project-laravel.test-1  |   Press Ctrl+C to stop the server
 project-laravel.test-1  |
 ```
-<img src="https://github.com/Gabrysiewicz/S6P_Programowanie-aplikacji-w-chmurze-obliczeniowej/blob/main/images/laravel_initial_site.jpg" >
+<img src="https://github.com/Gabrysiewicz/Cloud-Application-Programming/blob/main/images/laravel_initial_site.jpg" >
 
-<h1 align='center'> Etap III - Praca z projektem </h1>
+<h1 align='center'> Stage III - Work with project </h1>
 
 # Sail
-### Aby krzystać z podstawowych poleceń php należy wykorzystywać program sail znajdujący się wewnątrz katalogu vendor
+### To use basic PHP commands, you need to use the `sail` program located inside the `vendor` directory
 ```
 ./vender/bin/sail php --version
 ```
 
-### Warto jest skorzystać z aliasu w celu ułatwienia pracy
+### It is recommended to use an alias to simplify your workflow
+
 ```
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 ```
 
-### Można również wykonywać polecenia wewnątrz kontenera
+### You can also execute commands inside the container
 ```
 docker exec -it 46f759d3d748 bash
 ```
@@ -301,40 +305,43 @@ root@46f759d3d748:/var/www/html# php artisan migrate
    INFO  Nothing to migrate.
 
 ```
-### Jeżeli chodzi o pliki oraz strukturę aplikacji, to są one współdzielone z kontenerem za pośrednictwem volumenow
+### Regarding files and the application structure, they are shared with the container via volumes
 
-<h1 align='center'> Etap IV - Projekt </h1> 
 
-Projekt ma na celu stworzenie aplikacji internetowej, która pozwoli użytkownikom reklamować swoje usługi fryzjerskie. Aplikacja zapewni fryzjerom platformę do tworzenia profili i promowania swoich firm wśród potencjalnych klientów. 
+<h1 align='center'> Stage IV - Project </h1> 
 
-Wymagania funkcjonalne
-- Rejestracja i logowanie użytkowników
-- Możliwość tworzenia usług fryzjerskich
-- Możliwość zarządzania swoimi usługami
-- Funkcja wyszukiwania umożliwiająca użytkownikom znalezienie fryzjerów na podstawie lokalizacji.
+The project aims to create a web application that allows users to promote their hairdressing services. The application provides hairdressers with a platform to create profiles and advertise their businesses to potential clients.
 
-Wymagania niefunkcjonalne
-- Aplikacja powinna być kompatybilna z różnymi przeglądarkami takimi jak Google Chrome, Firefox
-- Aplikacja powinna działać niezależnie od systemu operacyjnego
-- Dane użytkowników powinny być bezpiecznie przechowywane
-- System korzysta z bazy MySQL wewnątrz środowiska Docker.
-- System jest wykonany w technologii Laravel
+**Functional Requirements**
+- User registration and login
+- Ability to create hairdressing services
+- Ability to manage own services
+- Search functionality allowing users to find hairdressers based on location
 
-## Technologie
-<img src="https://github.com/Gabrysiewicz/S6P_Programowanie-aplikacji-w-chmurze-obliczeniowej/blob/main/images/laravel.png" >
+**Non-Functional Requirements**
+- The application should be compatible with various browsers such as Google Chrome and Firefox
+- The application should work independently of the operating system
+- User data should be stored securely
+- The system uses a MySQL database inside the Docker environment
+- The system is built using the Laravel framework
 
-Laravel to popularny framework programistyczny, który jest wykorzystywany do budowy nowoczesnych aplikacji internetowych. Wykorzystuje język PHP i zapewnia wiele narzędzi i funkcji, które ułatwiają proces tworzenia oprogramowania.
-Jedną z największych zalet Laravela jest jego rozbudowany system ORM o nazwie Eloquent. Umożliwia on łatwą pracę z bazą danych, eliminując potrzebę pisania złożonych zapytań SQL. 
+## Technologies
+<img src="https://github.com/Gabrysiewicz/Cloud-Application-Programming/blob/main/images/laravel.png">
 
-<img src="https://github.com/Gabrysiewicz/S6P_Programowanie-aplikacji-w-chmurze-obliczeniowej/blob/main/images/sail.jpg">
-Sail to oficjalne narzędzie dostarczane przez Laravel. Ułatwia wdrażanie i uruchamianie aplikacji Laravel poprzez konteneryzację za pomocą Docker. Kontenery te zawierają wszystkie niezbędne zależności potrzebne do bezbłędnej pracy aplikacji Laravel.
-<h1 align='center'> Etap V - Docker </h1> 
+Laravel is a popular development framework used to build modern web applications. It uses the PHP language and provides many tools and features that simplify the software development process.  
+One of Laravel’s greatest advantages is its comprehensive ORM system called **Eloquent**, which allows easy database interaction without the need to write complex SQL queries.
 
-Jeżeli chodzi o Dockera w Laravelu to jest on niezwykle prosty dla developera. Wszystko upraszcza się do instalacji sail.
-Natomiast już z persektywy dev-opsa sytuacja nie jest tak prosta, ponieważ sail niewystarczy do zarządzania projektem na produkcji.
-Dlatego najlepszą opcją jest przygotowanie własnego środowiska.
+<img src="https://github.com/Gabrysiewicz/Cloud-Application-Programming/blob/main/images/sail.jpg">
 
-Struktura projektu
+**Sail** is the official tool provided by Laravel. It simplifies deploying and running Laravel applications through containerization using Docker. These containers include all the necessary dependencies for the Laravel application to run smoothly.
+
+<h1 align='center'>Stage V – Docker</h1>
+
+Regarding Docker in Laravel, it is extremely simple for developers. Most tasks are reduced to installing Sail.  
+However, from a DevOps perspective, the situation is not as straightforward because Sail alone is not enough to manage a project in production.  
+Therefore, the best option is to set up a custom environment.
+
+**Project Structure**
 ```
 ├── Dockerfile
 ├── README.md
@@ -448,9 +455,9 @@ volumes:
       driver: local
 ```
 
-Jeżeli na tym etapie aplikacja działa poprawnie, możemy zaadaptować ją do swarm
+If the application works correctly at this stage, we can adapt it to Docker Swarm
 
-<img src="https://github.com/Gabrysiewicz/S6P_Programowanie-aplikacji-w-chmurze-obliczeniowej/blob/main/images/swarm.jpg">
+<img src="https://github.com/Gabrysiewicz/Cloud-Application-Programming/blob/main/images/swarm.jpg">
 
 ## docker-stack.yaml
 ```
@@ -517,7 +524,7 @@ volumes:
 
 ## Swarm
 
-### Inicjalizacja swarm'a
+### Swarn Initialization
 ```
 ➜  Laravel git:(main) ✗ docker swarm init
 ```
@@ -531,7 +538,7 @@ To add a worker to this swarm, run the following command:
 To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
 ```
 
-### Zbudowanie swarm o nazwie `laravel` na bazie `docker-stack.yaml`
+### Building a Swarm named `laravel` based on `docker-stack.yaml`
 
 ```
 ➜  Laravel git:(main) ✗ docker stack deploy -c docker-stack.yaml laravel
@@ -544,7 +551,7 @@ Creating service laravel_mysql
 Creating service laravel_app
 ```
 
-### Listing powstałego swarm
+### Listing of swarm
 
 ```
 ➜  Laravel git:(main) ✗ docker stack ls
@@ -554,7 +561,7 @@ NAME      SERVICES   ORCHESTRATOR
 laravel   2          Swarm
 ```
 
-### Wyświetlenie kontenerów wewnątrz swarm
+### Show container inside of swarm
 
 ```
 ➜  Laravel git:(main) ✗ docker stack ps laravel
@@ -570,7 +577,7 @@ nxtibw63kgvn   laravel_mysql.3   mysql/mysql-server:8.0   docker-desktop   Runni
 ```
 
 ## Export
-Do export możemy posłużyć się między innymi githubem. W .gitignore z góry będą znajowały się .env i vendor.
+For exporting, we can use GitHub, among other options. The `.gitignore` file will already include `.env` and `vendor`.
 
 ```
 ➜ git init
@@ -585,24 +592,24 @@ Do export możemy posłużyć się między innymi githubem. W .gitignore z góry
 ➜ git push origin main
 ```
 
-Export bazy danych jeżeli jej zawartość jest nam potrzeba, w tym celu możemy skorzystać z `mysqldump`
+Exporting the database if its contents are needed; for this purpose, we can use `mysqldump`
 ```
 mysqldump -u your_database_user -p your_database_name > exported_database.sql
 ```
 
-Exportujemy pliki konfiguracyjne:
+Export conf files:
  - .env
  - ./config
  - ./database
 
 ## Import
-Po pobraniu projektu możemy na nowo skonfigurować zienne środowiskowe jeżeli występuje taka potrzeba
+After downloading the project, we can reconfigure the environment variables if needed.
 
-Z wykorzystaniem polecenia `composer install` doinstalowywujemy niezbędne pakiety w oparciu o plik `composer.json`
+Using the command `composer install`, we install the necessary packages based on the `composer.json` file.
 
-Importujemy bazę danych
+We import the database.
 
-Czyścimy cache:
+We clear the cache:
 ```
 php artisan cache:clear
 php artisan config:clear
@@ -610,12 +617,12 @@ php artisan route:clear
 php artisan view:clear
 ```
 
-Ewentualnie jeżeli okaże się to potrzebne należy nadać odpowiednie uprawnienia plikom i katalogom.
+If necessary, appropriate permissions should be granted to files and directories.
 
-<h2 align='center'> Etap VI - Wnioski </h2>
+<h2 align='center'>Stage VI – Conclusions</h2>
 
-W ramach projektu, został stworzony kompleksowy system umożliwiający fryzjerom tworzenie i zarządzanie swoim profilem, w którym mogą zaprezentować swoje umiejętności, doświadczenie, a także udostępniać informacje o dostępności oraz oferowanych usługach. Dzięki zastosowaniu Laravel, możliwe było łatwe zarządzanie bazą danych, co umożliwiło przechowywanie informacji o fryzjerach oraz ich usługach w sposób niezawodny.
+As part of the project, a comprehensive system was created that allows hairdressers to create and manage their profiles, where they can showcase their skills and experience, as well as share information about availability and offered services. Thanks to using Laravel, database management was simplified, enabling reliable storage of information about hairdressers and their services.
 
-Laravel Sail zapewnił nie tylko niezawodność aplikacji, ale także jej przenośność. Dzięki zastosowaniu kontenerów Docker, aplikacja była w pełni izolowana od systemu operacyjnego oraz innych zasobów, co minimalizowało ryzyko awarii i zapewniało stabilne środowisko pracy. Ponadto, konteneryzację umożliwiającą uruchomienie aplikacji na różnych platformach, co pozwalało na przenoszenie aplikacji na inne środowiska bez konieczności dużej ilości dostosowań i konfiguracji.
+Laravel Sail provided not only application reliability but also portability. By using Docker containers, the application was fully isolated from the operating system and other resources, minimizing the risk of failures and ensuring a stable working environment. Additionally, containerization made it possible to run the application on different platforms, allowing it to be transferred to other environments without extensive adjustments or configuration.
 
-Aplikacja została zaprojektowana w sposób intuicyjny i przystępny dla użytkowników. Dzięki temu, fryzjerzy mogli łatwo tworzyć i aktualizować swoje profile oraz dodawać informacje o usługach, co pozwalało na skuteczne promowanie swojej działalności.
+The application was designed to be intuitive and user-friendly. This allowed hairdressers to easily create and update their profiles and add service information, effectively promoting their business.
