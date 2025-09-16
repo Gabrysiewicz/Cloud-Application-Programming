@@ -1,6 +1,6 @@
 <table align='center'>
   <tr> <td colspan='3'> <img width="884px" > </td> </tr>
-  <tr> <td colspan="3" align='center'> <img src='https://github.com/Gabrysiewicz/Cloud-Application-Programming/blob/main/logo_politechniki_lubelskiej.jpg' width="400px" height="400px"></td> </tr>
+  <tr> <td colspan="3" align='center'> <img src='https://pollub.pl/fcp/sPREgARcJNScXKxEMUA9DA2ltVyVUFDFqUVJWazkALV96cypSPhRaWXI0D1ZUShtGPlY7MRk8VhIgXFdYVmsjBzRWKw/_global/public/biuro_rektora/zdjecia/logo_politechniki_lubelskiej.jpg' width="400px" height="400px"></td> </tr>
   <tr> <td> Kamil Gabrysiewicz </td> <td> Index: 95400 </td> <td> Grupa: 6.3 </td> </tr>  
   <tr> <td> Jakub Furtak </td> <td> Index: 95393 </td> <td> Grupa: 6.3 </td> </tr>  
   <tr> <td> Session 6 </td> <td colspan='2' align='center'> Cloud Application Programming </td> </tr>  
